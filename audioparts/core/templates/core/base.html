@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | Audio Parts Electronics</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'core/img/logo.jpg'%}"/>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'core/lib/animate/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'core/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.css">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'core/css/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <img src="{% static 'core/img/logo.png'%}" alt="Girl in a jacket" width="30" height="30">
+                    {% if LINK_FACEBOOK %} <a class="btn btn-link text-light" href="{{LINK_FACEBOOK}}"><i class="fab fa-facebook-f"></i></a> {% endif %}
+                    {% if LINK_TWITTER %} <a class="btn btn-link text-light" href="{{LINK_TWITTER}}"><i class="fab fa-twitter"></i></a> {% endif %}
+                    {% if LINK_INSTAGRAM %} <a class="btn btn-link text-light" href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram"></i></a> {% endif %}
+                    {% if LINK_WHATSAPP %}<a class="btn btn-link text-light" aria-label="WhatsApp" href="{{LINK_WHATSAPP}}" target="_blank" rel="noreferrer noopener"><i class="fab fa-whatsapp"></i></a>{% endif %}
+                    {% if LINK_LINKEDIN %} <a class="btn btn-link text-light" href="{{LINK_LINKEDIN}}"><i class="fab fa-linkedin-in"></i></a> {% endif %}
+                    {% if LINK_YOUTUBE %} <a class="btn btn-link text-light" href="{{LINK_YOUTUBE}}"><i class="fab fa-youtube"></i></a> {% endif %}
+                    {% if LINK_TIKTOK %} <a class="btn btn-link text-light" href="{{LINK_TIKTOK}}"><i class="fab fa-tiktok"></i></a> {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Contáctanos:</span>
+                    <span class="fs-5 fw-bold">0981 972 897</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="{%url 'home'%}" class="navbar-brand ps-5 me-0">
+            <h1 class="text-white m-0">Audio Parts Electronics</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{%url 'home'%}" class="nav-item nav-link">Home</a>
+                <a href="{%url 'about'%}" class="nav-item nav-link">Nosotros</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Productos</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{%url 'accessories'%}" class="dropdown-item">Herramientas / Accesorios</a>
+                        <a href="{%url 'backlight'%}" class="dropdown-item">Backlight / Tira LED</a>
+                        <a href="{%url 'semiconductor'%}" class="dropdown-item">Semiconductores</a>
+                        <a href="{%url 'miscellany'%}" class="dropdown-item">Misceláneas</a>
+                        <a href="{%url 'audio'%}" class="dropdown-item">Audio Profesional</a>
+                    </div>
+                </div>
+                <a href="{%url 'contacts'%}" class="nav-item nav-link">Contactos</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    {% block content%} {% endblock %}
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Nuestras oficinas</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a href="https://www.google.com/maps/place/0%C2%B018'06.7%22S+78%C2%B032'24.8%22W/@-0.3018716,-78.5424176,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-0.3018716!4d-78.5402289"
+                        target="blank">CA S38E Miguel Angel Viteri E1180 Lote 42C - Entrada al Conde</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0981 972 897 - 0988 663 057</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>baudioparts@gmail.com</p>
+                    <div class="d-flex pt-3">
+                        {% if LINK_FACEBOOK %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_FACEBOOK}}"><i class="fab fa-facebook-f"></i></a> {% endif %}
+                        {% if LINK_TWITTER %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_TWITTER}}"><i class="fab fa-twitter"></i></a> {% endif %}  
+                        {% if LINK_INSTAGRAM %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram"></i></a> {% endif %}                
+                        {% if LINK_WHATSAPP %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_WHATSAPP}}" aria-label="WhatsApp" 
+                        target="_blank" rel="noreferrer noopener"><i class="fab fa-whatsapp"></i></a> {% endif %}
+                        {% if LINK_LINKEDIN %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_LINKEDIN}}"><i class="fab fa-linkedin-in"></i></a> {% endif %}
+                        {% if LINK_YOUTUBE %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_YOUTUBE}}"><i class="fab fa-youtube"></i></a> {% endif %}
+                        {% if LINK_TIKTOK %} <a class="btn btn-square btn-primary rounded-circle me-2" href="{{LINK_TIKTOK}}"><i class="fab fa-tiktok"></i></a> {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Enlaces rápidos</h5>
+                    <a class="btn btn-link" href="{%url 'home'%}">Inicio</a>
+                    <a class="btn btn-link" href="{%url 'about'%}">Nosotros</a>
+                    <a class="btn btn-link" href="{%url 'contacts'%}">Contactos</a>
+                    <a class="btn btn-link" href="{%url 'privacypolicy'%}">Copyright & Políticas</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Horarios de atención</h5>
+                    <p class="mb-1">Lunes - Viernes</p>
+                    <h6 class="text-light">09:00 am - 19:00 pm</h6>
+                    <p class="mb-1">Sábados</p>
+                    <h6 class="text-light">09:00 am - 17:00 pm</h6>
+                    <p class="mb-1">Domingo</p>
+                    <h6 class="text-light">Cerrado</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img class="logo-footer" src="{%static 'core/img/logotipo.png'%}" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="{%url 'privacypolicy'%}">Audio Parts Electronics</a>, Todos los derechos reservados.
+            </p>
+            <p class="mb-0">Diseñado por <a class="fw-semi-bold" href="https://wa.me/593999126808" target="_blank" rel="noreferrer noopener">CyberTools</a></p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    
+    
+    <!-- Back to Top -->
+    <a href="{%url 'home'%}" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" aria-label="redirect_home"><i class="bi bi-arrow-up"></i></a>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
+    <script async src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table-locale-all.min.js"></script>
+    <script src="{% static 'core/lib/wow/wow.min.js'%}"></script>
+    <script src="{% static 'core/lib/easing/easing.min.js'%}"></script>
+    <script src="{% static 'core/lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'core/lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'core/lib/counterup/counterup.min.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'core/js/main.js'%}"></script>
+    </body>    
+    </html>

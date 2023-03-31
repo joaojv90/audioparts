@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Accesorios{% endblock %}
+
+{% block content%}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header-products py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <h1 class="display-3 text-white animated slideInRight">Herramientas & Accesorios</h1>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Show Items Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <center>
+    <a class="btn btn-primary px-4" href="" target="_blank" rel="noreferrer noopener">Exportar a <i class="fa fa-file-pdf"></i><i
+        class="fa fa-arrow-right ms-2"></i></a>
+    </center>
+    <table class="table table-hover" data-toggle="table" data-locale="es-ES"
+    data-search="true" data-height="1000">
+        <thead>
+            <tr>
+                <th>
+                    <center>Imagen</center>
+                </th>
+                <th>
+                    <center>Nombre</center>
+                </th>
+                <th>
+                    <center>Código</center>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for accessories in accessory %}
+            <tr>
+                <td>
+                    <center>
+                        <a href="{{accessories.image.url}}"><img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img"></a>
+                    </center>
+                </td>
+                <td><center>{{accessories.name}}</center></td>
+                <td><center>{{accessories.model}}</center></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+<!-- Show Items End -->
+<br>
+<br>
+{% endblock %}
