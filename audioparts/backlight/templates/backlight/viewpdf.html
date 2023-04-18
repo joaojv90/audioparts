@@ -1,0 +1,61 @@
+{% load static %}
+
+{% block title %}Backlights{% endblock %}
+
+{% block content%}
+
+<div class="container">
+    <center>
+        <img src="{% static 'core/img/logo.webp'%}" alt="logo">
+    </center>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    <center>Imagen</center>
+                </th>
+                <th>
+                    <center>Código</center>
+                </th>
+                <th>
+                    <center>Marca</center>
+                </th>
+                <th>
+                    <center>Modelo</center>
+                </th>
+                <th>
+                    <center>Piezas</center>
+                </th>
+                <th>
+                    <center>LED'S</center>
+                </th>
+                <th>
+                    <center>Voltaje</center>
+                </th>
+                <th>
+                    <center>Referencia</center>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stripsLed in strips %}
+            <tr>
+                <td>
+                    <center>
+                        <img src="{{stripsLed.image.url}}" alt="accessory img">
+                    </center>
+                </td>
+                <td class="text-center"><center>{{stripsLed.code}}</center></td>
+                <td><center>{{stripsLed.trademark}}</center></td>
+                <td><center>{{stripsLed.model}}</center></td>
+                <td><center>{{stripsLed.piece}}</center></td>
+                <td><center>{{stripsLed.leds}}</center></td>
+                <td><center>{{stripsLed.voltage}}</center></td>
+                <td><center>{{stripsLed.references}}</center></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

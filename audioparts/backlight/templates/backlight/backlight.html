@@ -17,36 +17,36 @@
 <!-- Show Items Start -->
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <center>
-        <a class="btn btn-primary px-4" href="" target="_blank" rel="noreferrer noopener">Exportar a <i class="fa fa-file-pdf"></i><i
+        <a class="btn btn-primary px-4" href="{% url 'viewpdf' %}" target="_blank" rel="noreferrer noopener">Exportar a <i class="fa fa-file-pdf"></i><i
             class="fa fa-arrow-right ms-2"></i></a>
-        </center>
+    </center>
     <table class="table table-hover" data-toggle="table" data-locale="es-ES"
     data-search="true" data-height="1000">
         <thead>
             <tr>
                 <th>
-                    <center>Imagen</center>
+                    Imagen
                 </th>
                 <th>
-                    <center>Código</center>
+                    Código
                 </th>
                 <th>
-                    <center>Marca</center>
+                    Marca
                 </th>
                 <th>
-                    <center>Modelo</center>
+                    Modelo
                 </th>
                 <th>
-                    <center>Piezas</center>
+                    Piezas
                 </th>
                 <th>
-                    <center>LED'S</center>
+                    LED'S
                 </th>
                 <th>
-                    <center>Voltaje</center>
+                    Voltaje
                 </th>
                 <th>
-                    <center>Referencia</center>
+                    Referencia
                 </th>
             </tr>
         </thead>
@@ -54,17 +54,15 @@
             {% for stripsLed in strips %}
             <tr>
                 <td>
-                    <center>
-                        <a href="{{stripsLed.image.url}}"><img src="{{stripsLed.image.url}}" class="img-responsive" alt="accessory img"></a>
-                    </center>
+                    <a href="{{stripsLed.image.url}}"><img src="{{stripsLed.image.url}}" class="img-responsive" alt="accessory img"></a>
                 </td>
-                <td><center>{{stripsLed.code}}</center></td>
-                <td><center>{{stripsLed.trademark}}</center></td>
-                <td><center>{{stripsLed.model}}</center></td>
-                <td><center>{{stripsLed.piece}}</center></td>
-                <td><center>{{stripsLed.leds}}</center></td>
-                <td><center>{{stripsLed.voltage}}</center></td>
-                <td><center>{{stripsLed.references}}</center></td>
+                <td>{{stripsLed.code}}</td>
+                <td>{{stripsLed.trademark}}</td>
+                <td>{{stripsLed.model}}</td>
+                <td>{{stripsLed.piece}}</td>
+                <td>{{stripsLed.leds}}</td>
+                <td>{{stripsLed.voltage}}</td>
+                <td>{{stripsLed.references}}</td>
             </tr>
             {% endfor %}
         </tbody>

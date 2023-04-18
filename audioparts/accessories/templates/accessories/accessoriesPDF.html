@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">Catálogo de Herramientas & Accesorios</h1>
+        </div>
+        <div class="container">
+            <center>
+                <img src="{{logo}}" alt="logo">
+            </center>
+            <table border=1>
+                <thead>
+                    <th>
+                        Imagen
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Código
+                    </th>
+                </thead>
+                <tbody>
+                    {% for accessories in accessory %}
+                    <tr>
+                        <td>
+                            <center>
+                                <img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img">
+                            </center>
+                        </td>
+                        <td><center>{{accessories.name}}</center></td>
+                        <td><center>{{accessories.model}}</center></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container text-center">
+                <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="{%url 'privacypolicy'%}">Audio Parts Electronics</a>, Todos los derechos reservados.
+                </p>
+                <p class="mb-0">Diseñado por <a class="fw-semi-bold" href="https://wa.me/593998602256" target="_blank" rel="noreferrer noopener">CyberTools</a></p>
+            </div>
+        </div>
+    </body>
+</html>
