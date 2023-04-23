@@ -17,7 +17,7 @@
 <!-- Show Items Start -->
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <center>
-        <a class="btn btn-primary px-4" href="" target="_blank" rel="noreferrer noopener">Exportar a <i class="fa fa-file-pdf"></i><i
+        <a class="btn btn-primary px-4" href="{%url 'miscellanyPDF'%}" target="_blank" rel="noreferrer noopener">Exportar a <i class="fa fa-file-pdf"></i><i
             class="fa fa-arrow-right ms-2"></i></a>
         </center>
     <table class="table table-hover" data-toggle="table" data-locale="es-ES"
@@ -25,13 +25,13 @@
         <thead>
             <tr>
                 <th>
-                    <center>Imagen</center>
+                    Imagen
                 </th>
                 <th>
-                    <center>Descripción</center>
+                    Descripción
                 </th>
                 <th>
-                    <center>Código</center>
+                    Código
                 </th>
             </tr>
         </thead>
@@ -39,16 +39,15 @@
             {% for miscellaneous in miscell %}
             <tr>
                 <td>
-                    <center>
+                    
                         <a href="{{miscellaneous.image.url}}"><img src="{{miscellaneous.image.url}}" class="img-responsive" alt="miscellany img"></a>
-                    </center>
+                    
                 </td>
-                <td><center>{{miscellaneous.description}}</center></td>
-                <td><center>{{miscellaneous.code}}</center></td>
+                <td>{{miscellaneous.description}}</td>
+                <td>{{miscellaneous.code}}</td>
             </tr>
             {% endfor %}
         </tbody>
-
     </table>
 </div>
 <!-- Show Items End -->

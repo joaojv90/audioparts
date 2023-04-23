@@ -1,61 +1,65 @@
 {% load static %}
-
-{% block title %}Backlights{% endblock %}
-
-{% block content%}
-
-<div class="container">
-    <center>
-        <img src="" alt="logo">
-    </center>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>
-                    <center>Imagen</center>
-                </th>
-                <th>
-                    <center>Código</center>
-                </th>
-                <th>
-                    <center>Marca</center>
-                </th>
-                <th>
-                    <center>Modelo</center>
-                </th>
-                <th>
-                    <center>Piezas</center>
-                </th>
-                <th>
-                    <center>LED'S</center>
-                </th>
-                <th>
-                    <center>Voltaje</center>
-                </th>
-                <th>
-                    <center>Referencia</center>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for stripsLed in strips %}
-            <tr>
-                <td>
-                    <center>
-                        <img src="{{stripsLed.image.url}}" alt="accessory img">
-                    </center>
-                </td>
-                <td class="text-center"><center>{{stripsLed.code}}</center></td>
-                <td><center>{{stripsLed.trademark}}</center></td>
-                <td><center>{{stripsLed.model}}</center></td>
-                <td><center>{{stripsLed.piece}}</center></td>
-                <td><center>{{stripsLed.leds}}</center></td>
-                <td><center>{{stripsLed.voltage}}</center></td>
-                <td><center>{{stripsLed.references}}</center></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-{% endblock %}
+<html lang="es">
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+    <body>
+        <div class="container text-center">   
+            <img src="{% static 'core/img/logotipo.webp'%}" class="img-logotipo" alt="logo">         
+            <h3>Catálogo Backlights</h3>
+        </div>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Imagen
+                        </th>
+                        <th>
+                            Código
+                        </th>
+                        <th>
+                            Marca
+                        </th>
+                        <th>
+                            Modelo
+                        </th>
+                        <th>
+                            Piezas
+                        </th>
+                        <th>
+                            LED'S
+                        </th>
+                        <th>
+                            Voltaje
+                        </th>
+                        <th>
+                            Referencia
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stripsLed in strips %}
+                    <tr>
+                        <td>
+                            <img src="{{stripsLed.image.url}}" class="img-responsive" alt="backlight img">
+                        </td>
+                        <td class="text-center">{{stripsLed.code}}</td>
+                        <td>{{stripsLed.trademark}}</td>
+                        <td>{{stripsLed.model}}</td>
+                        <td>{{stripsLed.piece}}</td>
+                        <td>{{stripsLed.leds}}</td>
+                        <td>{{stripsLed.voltage}}</td>
+                        <td>{{stripsLed.references}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container text-center">
+                <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="{%url 'privacypolicy'%}">Audio Parts Electronics</a>, Todos los derechos reservados.
+                </p>
+                <p class="mb-0">Diseñado por <a class="fw-semi-bold" href="https://wa.me/593998602256" target="_blank" rel="noreferrer noopener">CyberTools</a></p>
+            </div>
+        </div>
+    </body>
+</html>

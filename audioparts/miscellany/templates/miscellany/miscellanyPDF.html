@@ -4,43 +4,31 @@
     <body>
         <div class="container text-center">   
             <img src="{% static 'core/img/logotipo.webp'%}" class="img-logotipo" alt="logo">         
-            <h3>Catálogo Semiconductores</h3>
+            <h3>Catálogo Miseláneas</h3>
         </div>
         <div class="container">
             <table class="table table-bordered">
                 <thead>
-                    </tr>
+                    <tr>
                         <th>
                             Imagen
-                        </th>
-                        <th>
-                            Código
-                        </th>
-                        <th>
-                            Modelo
-                        </th>
-                        <th>
-                            Tipo
                         </th>
                         <th>
                             Descripción
                         </th>
                         <th>
-                            Origen
+                            Código
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for semic in semiconduct %}
+                    {% for miscellaneous in miscell %}
                     <tr>
                         <td>
-                            <img src="{{semic.image.url}}" class="img-responsive" alt="semiconductor img">
+                            <img src="{{miscellaneous.image.url}}" class="img-responsive" alt="miscellany img">
                         </td>
-                        <td>{{semic.code}}</td>
-                        <td>{{semic.model}}</td>
-                        <td>{{semic.sort}}</td>                
-                        <td>{{semic.description}}</td>
-                        <td>{{semic.origin}}</td>
+                        <td>{{miscellaneous.description}}</td>
+                        <td>{{miscellaneous.code}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

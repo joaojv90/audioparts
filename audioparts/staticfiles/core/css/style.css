@@ -293,8 +293,8 @@ h6,
 }
 
 .img-responsive {
-    height: 75px;
-    width: 75px;
+    height: 65px;
+    width: 65px;
 }
 
 /*** Facts ***/
@@ -691,14 +691,9 @@ h6,
     transform: scale(1);
 }
 
-.container-pdf{
-    display: grid;
-    place-content: center;
-}
-
 .img-logotipo {
     height: 150px;
-    width: 150px;
+    width: 150px;    
 }
 
 th{

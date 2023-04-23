@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="es">
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
     <body>
-        <div class="container py-5" align="center">
-            <img src="{{logo}}" class="img-responsive" alt="logo" width = "200px" height="200px">
-            <h1 class="display-3 text-white animated slideInRight">Catálogo de Herramientas & Accesorios
-            </h1>
+        <div class="container text-center">   
+            <img src="{% static 'core/img/logotipo.webp'%}" class="img-logotipo" alt="logo">         
+            <h3>Catálogo Accesorios</h3>
         </div>
-        <br>
         <div class="container">
-            <table border=1>
+            <table class="table table-bordered">
                 <thead>
                     <th>
                         Imagen
@@ -25,7 +24,7 @@
                     <tr>
                         <td>
                             <center>
-                                <img src="{{logo}}" class="img-responsive" alt="accessory img">
+                                <img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img">
                             </center>
                         </td>
                         <td><center>{{accessories.name}}</center></td>

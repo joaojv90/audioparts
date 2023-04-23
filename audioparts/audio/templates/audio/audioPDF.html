@@ -4,43 +4,31 @@
     <body>
         <div class="container text-center">   
             <img src="{% static 'core/img/logotipo.webp'%}" class="img-logotipo" alt="logo">         
-            <h3>Catálogo Semiconductores</h3>
+            <h3>Catálogo Audio Profesional</h3>
         </div>
         <div class="container">
             <table class="table table-bordered">
                 <thead>
-                    </tr>
+                    <tr>
                         <th>
                             Imagen
-                        </th>
-                        <th>
-                            Código
-                        </th>
-                        <th>
-                            Modelo
-                        </th>
-                        <th>
-                            Tipo
                         </th>
                         <th>
                             Descripción
                         </th>
                         <th>
-                            Origen
+                            Código
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for semic in semiconduct %}
+                    {% for audio in sound %}
                     <tr>
                         <td>
-                            <img src="{{semic.image.url}}" class="img-responsive" alt="semiconductor img">
+                            <img src="{{audio.image.url}}" class="img-responsive" alt="audio img">
                         </td>
-                        <td>{{semic.code}}</td>
-                        <td>{{semic.model}}</td>
-                        <td>{{semic.sort}}</td>                
-                        <td>{{semic.description}}</td>
-                        <td>{{semic.origin}}</td>
+                        <td>{{audio.description}}</td>
+                        <td>{{audio.code}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

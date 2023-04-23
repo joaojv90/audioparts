@@ -25,22 +25,22 @@
         <thead>
             <tr>
                 <th>
-                    <center>Imagen</center>
+                    Imagen
                 </th>
                 <th>
-                    <center>Código</center>
+                    Código
                 </th>
                 <th>
-                    <center>Modelo</center>
+                    Modelo
                 </th>
                 <th>
-                    <center>Tipo</center>
+                    Tipo
                 </th>
                 <th>
-                    <center>Descripción</center>
+                    Descripción
                 </th>
                 <th>
-                    <center>Origen</center>
+                    Origen
                 </th>
             </tr>
         </thead>
@@ -48,15 +48,15 @@
             {% for semic in semiconduct %}
             <tr>
                 <td>
-                    <center>
+                    
                         <a href="{{semic.image.url}}"><img src="{{semic.image.url}}" class="img-responsive" alt="accessory img"></a>
-                    </center>
+                    
                 </td>
-                <td><center>{{semic.code}}</center></td>
-                <td><center>{{semic.model}}</center></td>
-                <td><center>{{semic.sort}}</center></td>                
-                <td><center>{{semic.description}}</center></td>
-                <td><center>{{semic.origin}}</center></td>
+                <td>{{semic.code}}</td>
+                <td>{{semic.model}}</td>
+                <td>{{semic.sort}}</td>                
+                <td>{{semic.description}}</td>
+                <td>{{semic.origin}}</td>
             </tr>
             {% endfor %}
         </tbody>
