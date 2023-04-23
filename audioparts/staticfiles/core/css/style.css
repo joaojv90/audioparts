@@ -293,8 +293,8 @@ h6,
 }
 
 .img-responsive {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
 }
 
 /*** Facts ***/
@@ -689,6 +689,16 @@ h6,
 
 .testimonial-carousel .owl-item.center .testimonial-text {
     transform: scale(1);
+}
+
+.container-pdf{
+    display: grid;
+    place-content: center;
+}
+
+.img-logotipo {
+    height: 150px;
+    width: 150px;
 }
 
 th{

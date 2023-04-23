@@ -17,36 +17,25 @@ class ToPdf (View):
     accessory = Accessory.objects.all()
 
     def link_callback(self, uri, rel):
-            result = finders.find(uri)
-            if result:
-                    if not isinstance(result, (list, tuple)):
-                            result = [result]
-                    result = list(os.path.realpath(path) for path in result)
-                    path=result[0]
-            else:
-                    sUrl = settings.STATIC_URL        
-                    sRoot = settings.STATIC_ROOT      
-                    mUrl = settings.MEDIA_URL         
-                    mRoot = settings.MEDIA_ROOT       
+        sUrl = settings.STATIC_URL        
+        sRoot = settings.STATIC_ROOT      
+        mUrl = settings.MEDIA_URL         
+        mRoot = settings.MEDIA_ROOT       
 
-                    if uri.startswith(mUrl):
-                        path = os.path.join(mRoot, uri.replace(mUrl, ""))
-                    elif uri.startswith(sUrl):
-                        path = os.path.join(sRoot, uri.replace(sUrl, ""))
-                    else:
-                        return uri
-                    
-            if not os.path.isfile(path):
-                    raise Exception(
-                            'media URI must start with %s or %s' % (sUrl, mUrl)
-                    )
-            return path
+        if uri.startswith(mUrl):
+            return os.path.join(mRoot, uri.replace(mUrl, ""))
+        elif uri.startswith(sUrl):
+            return os.path.join(sRoot, uri.replace(sUrl, ""))
+        else:
+            return uri
+            
 
     def get(self, request, *args, **kwargs):
         #try:
             template = get_template('accessories/accessoriesPDF.html')
+            print(settings.STATIC_ROOT)
             context = {
-                'logo' : '{}{}'.format(settings.STATIC_URL, 'core/img/logo.webp'),
+                'logo' : '{}{}'.format(settings.STATIC_URL, 'logotipo.webp'),
                 'accessory': Accessory.objects.all(),
             }
             html = template.render(context)

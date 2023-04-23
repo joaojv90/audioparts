@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('semiconductor.urls')),
     path('', include('miscellany.urls')),
     path('', include('audio.urls')),
-]
+] 
 
 if settings.DEBUG:
     from django.conf.urls.static import static

@@ -1,0 +1,59 @@
+{% load static %}
+<html lang="es">
+    <body>
+        <div>
+            <img src="{% static 'core/img/logotipo.webp'%}" class="img-logotipo" alt="logo">
+        </div>
+        <div class="container-pdf">            
+            <h3 class="display-3 text-white animated slideInRight">Catálogo Semiconductores</h3>
+        </div>
+        <br>
+        <div class="container">
+            <table>
+                <thead>
+                    </tr>
+                        <th>
+                            Imagen
+                        </th>
+                        <th>
+                            Código
+                        </th>
+                        <th>
+                            Modelo
+                        </th>
+                        <th>
+                            Tipo
+                        </th>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Origen
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for semic in semiconduct %}
+                    <tr>
+                        <td>
+                            <img src="{{semic.image.url}}" class="img-responsive" alt="accessory img">
+                        </td>
+                        <td>{{semic.code}}</td>
+                        <td>{{semic.model}}</td>
+                        <td>{{semic.sort}}</td>                
+                        <td>{{semic.description}}</td>
+                        <td>{{semic.origin}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container text-center">
+                <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="{%url 'privacypolicy'%}">Audio Parts Electronics</a>, Todos los derechos reservados.
+                </p>
+                <p class="mb-0">Diseñado por <a class="fw-semi-bold" href="https://wa.me/593998602256" target="_blank" rel="noreferrer noopener">CyberTools</a></p>
+            </div>
+        </div>
+    </body>
+</html>
