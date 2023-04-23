@@ -23,12 +23,10 @@
                     {% for accessories in accessory %}
                     <tr>
                         <td>
-                            <center>
-                                <img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img">
-                            </center>
+                            <img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img">
                         </td>
-                        <td><center>{{accessories.name}}</center></td>
-                        <td><center>{{accessories.model}}</center></td>
+                        <td>{{accessories.name}}</td>
+                        <td>{{accessories.model}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

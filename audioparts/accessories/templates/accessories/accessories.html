@@ -25,13 +25,13 @@
         <thead>
             <tr>
                 <th>
-                    <center>Imagen</center>
+                    Imagen
                 </th>
                 <th>
-                    <center>Nombre</center>
+                    Nombre
                 </th>
                 <th>
-                    <center>Código</center>
+                    Código
                 </th>
             </tr>
         </thead>
@@ -39,12 +39,10 @@
             {% for accessories in accessory %}
             <tr>
                 <td>
-                    <center>
-                        <a href="{{accessories.image.url}}"><img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img"></a>
-                    </center>
+                    <a href="{{accessories.image.url}}"><img src="{{accessories.image.url}}" class="img-responsive" alt="accessory img"></a>
                 </td>
-                <td><center>{{accessories.name}}</center></td>
-                <td><center>{{accessories.model}}</center></td>
+                <td>{{accessories.name}}</td>
+                <td>{{accessories.model}}</td>
             </tr>
             {% endfor %}
         </tbody>
