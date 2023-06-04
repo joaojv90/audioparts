@@ -707,7 +707,7 @@ td{
 /*** Footer ***/
 .footer {
     color: #B0B9AE;
-    height: 350px;
+    max-width: 100%;
 }
 
 .footer .btn.btn-link {
